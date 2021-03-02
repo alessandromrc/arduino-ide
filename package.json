@@ -1,44 +1,45 @@
 {
-  "name": "arduino-editor",
-  "version": "2.0.0-beta.3",
-  "description": "Arduino IDE",
-  "repository": "https://github.com/bcmi-labs/arduino-editor.git",
-  "author": "Arduino SA",
-  "license": "AGPL-3.0-or-later",
-  "private": true,
-  "engines": {
-    "node": ">=12.14.1 <13"
-  },
-  "devDependencies": {
-    "@theia/cli": "next",
-    "cross-env": "^7.0.2",
-    "lerna": "^3.20.2",
-    "rimraf": "^2.6.1",
-    "semver": "^7.3.2",
-    "tslint": "^5.5.0",
-    "typescript": "^3.9.2"
-  },
-  "scripts": {
-    "prepare": "cross-env THEIA_ELECTRON_SKIP_REPLACE_FFMPEG=1 lerna run prepare && yarn download:plugins",
-    "rebuild:browser": "theia rebuild:browser",
-    "rebuild:electron": "theia rebuild:electron",
-    "start": "yarn --cwd ./electron-app start",
-    "watch": "lerna run watch --parallel",
-    "test": "lerna run test",
-    "download:plugins": "theia download:plugins",
-    "update:version": "node ./scripts/update-version.js"
-  },
-  "workspaces": [
-    "arduino-ide-extension",
-    "electron-app",
-    "browser-app"
-  ],
-  "theiaPluginsDir": "plugins",
-  "theiaPlugins": {
-    "vscode-builtin-cpp": "https://open-vsx.org/api/vscode/cpp/1.52.1/file/vscode.cpp-1.52.1.vsix",
-    "vscode-arduino-tools": "https://downloads.arduino.cc/vscode-arduino-tools/nightly/vscode-arduino-tools-0.0.1-beta.1.vsix",
-    "vscode-builtin-json": "https://open-vsx.org/api/vscode/json/1.46.1/file/vscode.json-1.46.1.vsix",
-    "vscode-builtin-json-language-features": "https://open-vsx.org/api/vscode/json-language-features/1.46.1/file/vscode.json-language-features-1.46.1.vsix",
-    "cortex-debug": "https://open-vsx.org/api/marus25/cortex-debug/0.3.7/file/marus25.cortex-debug-0.3.7.vsix"
-  }
+    "name": "arduino-editor",
+    "version": "2.0.0-beta.3",
+    "description": "Arduino IDE",
+    "repository": "https://github.com/bcmi-labs/arduino-editor.git",
+    "author": "Arduino SA",
+    "license": "AGPL-3.0-or-later",
+    "private": true,
+    "engines": {
+        "node": ">=12.14.1 <13"
+    },
+    "devDependencies": {
+        "@theia/cli": "next",
+        "cross-env": "^7.0.2",
+        "lerna": "^3.20.2",
+        "rimraf": "^2.6.1",
+        "semver": "^7.3.2",
+        "tslint": "^5.5.0",
+        "typescript": "^3.9.2"
+    },
+    "scripts": {
+        "prepare": "cross-env THEIA_ELECTRON_SKIP_REPLACE_FFMPEG=1 lerna run prepare && yarn download:plugins",
+        "rebuild:browser": "theia rebuild:browser",
+        "rebuild:electron": "theia rebuild:electron",
+        "start": "yarn --cwd ./electron-app start",
+        "watch": "lerna run watch --parallel",
+        "test": "lerna run test",
+        "download:plugins": "theia download:plugins",
+        "update:version": "node ./scripts/update-version.js"
+    },
+    "workspaces": [
+        "arduino-ide-extension",
+        "electron-app",
+        "browser-app"
+    ],
+    "theiaPluginsDir": "plugins",
+    "theiaPlugins": {
+        "formatting-toggle": "https://open-vsx.org/api/tombonnike/vscode-status-bar-format-toggle/2.0.0/file/tombonnike.vscode-status-bar-format-toggle-2.0.0.vsix",
+        "vscode-builtin-cpp": "https://open-vsx.org/api/vscode/cpp/1.52.1/file/vscode.cpp-1.52.1.vsix",
+        "vscode-arduino-tools": "https://downloads.arduino.cc/vscode-arduino-tools/nightly/vscode-arduino-tools-0.0.1-beta.1.vsix",
+        "vscode-builtin-json": "https://open-vsx.org/api/vscode/json/1.46.1/file/vscode.json-1.46.1.vsix",
+        "vscode-builtin-json-language-features": "https://open-vsx.org/api/vscode/json-language-features/1.46.1/file/vscode.json-language-features-1.46.1.vsix",
+        "cortex-debug": "https://open-vsx.org/api/marus25/cortex-debug/0.3.7/file/marus25.cortex-debug-0.3.7.vsix"
+    }
 }
